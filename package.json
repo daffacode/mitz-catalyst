@@ -30,7 +30,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/decentraland/catalyst-commons.git"
+    "url": "git+https://github.com/daffacode/mitz-catalyst.git"
   },
   "keywords": [
     "decentraland"
@@ -38,9 +38,9 @@
   "author": "Decentraland",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/decentraland/catalyst-commons/issues"
+    "url": "https://github.com/daffacode/mitz-catalyst/issues"
   },
-  "homepage": "https://github.com/decentraland/catalyst-commons#readme",
+  "homepage": "https://github.com/daffacode/mitz-catalyst#readme",
   "dependencies": {
     "abort-controller": "^3.0.0",
     "cids": "^1.1.9",

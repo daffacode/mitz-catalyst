@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getRopstenCatalysts = exports.getMainnetCatalysts = void 0;
+exports.getHarmonyTestnetCatalysts = exports.getRopstenCatalysts = exports.getMainnetCatalysts = void 0;
 const CatalystContract_1 = require("../contracts/CatalystContract");
 function getMainnetCatalysts() {
     return getServersFromNetwork('mainnet');
@@ -10,6 +10,10 @@ function getRopstenCatalysts() {
     return getServersFromNetwork('ropsten');
 }
 exports.getRopstenCatalysts = getRopstenCatalysts;
+function getHarmonyTestnetCatalysts() {
+    return getServersFromNetwork('harmony_testnet');
+}
+exports.getHarmonyTestnetCatalysts = getHarmonyTestnetCatalysts;
 async function getServersFromNetwork(network) {
     const contract = CatalystContract_1.DAOContract.withNetwork(network);
     // Check count on the list

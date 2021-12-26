@@ -10,6 +10,10 @@ export function getRopstenCatalysts(): Promise<ServerMetadata[]> {
   return getServersFromNetwork('ropsten')
 }
 
+export function getHarmonyTestnetCatalysts(): Promise<ServerMetadata[]> {
+  return getServersFromNetwork('harmony_testnet')
+}
+
 async function getServersFromNetwork(network: EthNetwork): Promise<ServerMetadata[]> {
   const contract = DAOContract.withNetwork(network)
 

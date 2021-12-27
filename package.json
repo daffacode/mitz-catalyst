@@ -1,90 +1,28 @@
 {
-  "name": "mitz-catalyst",
-  "version": "0.0.0-development",
-  "description": "Common tools and types to share between catalyst servers and clients",
-  "main": "dist/index.js",
+  "version": "v0.0.0",
+  "name": "mitz-schems",
+  "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
-  "scripts": {
-    "prebuild": "rm -rf dist",
-    "build": "tsc --project tsconfig.json",
-    "prewatch": "rm -rf dist",
-    "watch": "tsc --watch --project tsconfig.json",
-    "test": "TS_NODE_PROJECT=test/tsconfig.json nyc mocha -r ts-node/register --exit \"test/**/*.spec.ts\"",
-    "commit-msg": "validate-commit-msg",
-    "lint:fix": "eslint 'src/**/*.{js,ts,tsx}' --fix",
-    "lint:check": "eslint 'src/**/*.{js,ts,tsx}'"
-  },
-  "nyc": {
-    "all": true,
-    "include": [
-      "src"
-    ],
-    "extension": [
-      ".ts"
-    ],
-    "reporter": [
-      "text-summary"
-    ],
-    "sourceMap": true,
-    "instrument": true
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/daffacode/mitz-catalyst.git"
-  },
-  "keywords": [
-    "decentraland"
-  ],
-  "author": "Decentraland",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/daffacode/mitz-catalyst/issues"
-  },
-  "homepage": "https://github.com/daffacode/mitz-catalyst#readme",
-  "dependencies": {
-    "abort-controller": "^3.0.0",
-    "cids": "^1.1.9",
-    "cookie": "^0.4.1",
-    "cross-fetch": "^3.1.4",
-    "mitz-auth": "git://github.com/daffacode/mitz-auth#main",
-    "ipfs-only-hash": "^4.0.0",
-    "ms": "^2.1.2",
-    "multihashing-async": "^2.1.4",
-    "node-fetch": "^3.0.0"
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "mocha",
+    "check-api": "api-extractor run --typescript-compiler-folder ./node_modules/typescript",
+    "refresh-api": "api-extractor run --local --verbose --diagnostics --typescript-compiler-folder ./node_modules/typescript"
   },
   "devDependencies": {
-    "@types/chai": "^4.2.8",
-    "@types/chai-as-promised": "^7.1.2",
-    "@types/mocha": "^9.0.0",
-    "@types/ms": "^0.7.31",
-    "@types/sinon": "^10.0.4",
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^4.9.0",
-    "chai": "^4.2.0",
-    "chai-as-promised": "^7.1.1",
-    "eslint": "^8.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "fp-future": "^1.0.1",
-    "husky": "^7.0.2",
-    "memorystream": "^0.3.1",
-    "mocha": "^9.1.2",
-    "mockttp": "^2.0.1",
-    "nyc": "^15.1.0",
-    "prettier": "^2.2.1",
-    "sinon": "^11.1.2",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.3",
-    "validate-commit-msg": "^2.14.0"
+    "@microsoft/api-extractor": "^7.13.1",
+    "@types/mocha": "^8.2.0",
+    "@types/node": "^14.14.25",
+    "expect": "^26.6.2",
+    "mocha": "^8.2.1",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.5"
   },
-  "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "printWidth": 120,
-    "trailingComma": "none"
+  "dependencies": {
+    "ajv": "^7.1.0"
   },
-  "engines": {
-    "node": ">=14.0.0",
-    "npm": ">=7.0.0"
-  }
+  "files": [
+    "dist"
+  ]
 }
